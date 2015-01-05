@@ -530,6 +530,10 @@ public class PlotMeCoreManager {
         ILocation top = getGenManager(world).getTop(world, id);
 
         if (getMap(worldName).isUseProgressiveClear()) {
+            if (plugin.getPlotLocked(worldName, id) != null) {
+                sender.sendMessage(Util().C("MsgPlotLockedClear"));
+                return;
+            }
             plugin.addPlotToClear(new PlotToClear(worldName, id, reason));
         } else {
             getGenManager(world).clear(bottom, top);

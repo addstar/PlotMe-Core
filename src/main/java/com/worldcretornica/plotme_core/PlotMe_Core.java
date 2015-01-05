@@ -203,7 +203,7 @@ public class PlotMe_Core {
         plotsToClear.offer(plotToClear);
 
         Runnable pms = new PlotMeSpool(this, plotToClear);
-        serverBridge.scheduleSyncRepeatingTask(pms, 0L, 200L);
+        serverBridge.scheduleSyncRepeatingTask(pms, 0L, (long) serverBridge.getConfig().getInt("NbTicksPerClearStep", 5));
     }
 
     public void removePlotToClear(PlotToClear plotToClear, int taskid) {

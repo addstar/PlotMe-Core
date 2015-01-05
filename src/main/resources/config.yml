@@ -7,4 +7,5 @@ allowWorldTeleport: true
 defaultWEAnywhere: false
 NbClearSpools: 3
 NbBlocksPerClearStep: 50000
+NbTicksPerClearStep: 5
 AdvancedLogging: false
